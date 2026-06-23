@@ -1,0 +1,20 @@
+{
+  "name": "gocolors",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript automation for Go Colors website",
+  "scripts": {
+    "automate": "playwright test",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "typescript": "^6.0.3"
+  }
+}
