@@ -21,6 +21,7 @@ Other scripts:
 - `npm run test:headed` — run with browser visible
 - `npm run test:ui` — Playwright UI mode
 - `npm run report` — open last HTML report
+this is random test
 
 ## Requirements
 
