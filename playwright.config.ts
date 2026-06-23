@@ -6,11 +6,10 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1,
-  reporter: 'list',
+  reporter: process.env.CI ? [['list'], ['html']] : 'list',
   use: {
     baseURL: 'https://gocolors.com',
-    channel: 'chrome',
-    headless: false,
+    headless: !!process.env.CI,
     viewport: { width: 1280, height: 720 },
     screenshot: 'only-on-failure',
     trace: 'on-first-retry',
@@ -18,7 +17,9 @@ export default defineConfig({
   projects: [
     {
       name: 'chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: process.env.CI
+        ? { ...devices['Desktop Chrome'] }
+        : { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
   ],
 });
